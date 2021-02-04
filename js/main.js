@@ -326,7 +326,7 @@ function correctAnswer(btnElement) {
     btnElement.classList.add("correctAnswer");
     score++; 
     document.querySelector("#score-counter span").innerText = score;
-    document.querySelector("#end-score-counter span").innerText = score;
+    document.querySelector("#end-score-counter span").innerText = score *10 + "%";
     document.querySelector("#fact").style.display = "block";      
     document.querySelector("#next-button").style.display = "block"; 
 }
@@ -358,7 +358,7 @@ function nextQuestion() {
     }
 
         // if at the last question, the restart button appears
-        if (currentQuestion == (2)) {
+        if (currentQuestion == (questionArray.length - 1)) {
             // questionArray.length - 1
             showEndScreen();
           } else {
