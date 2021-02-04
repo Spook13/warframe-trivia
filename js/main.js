@@ -183,6 +183,7 @@ function firstScreen() {
 
     // not showing
     document.getElementById("question-screen").style.display = "none";
+    document.querySelector("#end-score-counter").style.display = "none";
 
     // start button
     // when clicked, the question appears on screen
@@ -217,10 +218,10 @@ function firstScreen() {
 
     // next button
     document.getElementById("next-button").addEventListener("click", function(){
-        nextQuestion();
+         nextQuestion();
     });
 
-    // next button
+    // restart button
     document.getElementById("restart-button").addEventListener("click", function(){
         startGame();
     });
@@ -320,16 +321,17 @@ function selectAnswer(questionIndex, answerIndex, btnElement) {
         wrongAnswer(btnElement);
     }
 }
-
+// What happens when the answer box clicked on is correct
 function correctAnswer(btnElement) {    
     btnElement.classList.add("correctAnswer");
     score++; 
     document.querySelector("#score-counter span").innerText = score;
+    document.querySelector("#end-score-counter span").innerText = score;
     document.querySelector("#fact").style.display = "block";      
     document.querySelector("#next-button").style.display = "block"; 
 }
 
-// 
+// What happens when the answer box clicked on is wrong
 function wrongAnswer(btnElement) {
     btnElement.classList.add("wrongAnswer");
     document.querySelector("#fact").style.display = "block";      
@@ -356,7 +358,7 @@ function nextQuestion() {
     }
 
         // if at the last question, the restart button appears
-        if (currentQuestion == (questionArray.length - 1)) {
+        if (currentQuestion == (2)) {
             // questionArray.length - 1
             showEndScreen();
           } else {
@@ -364,12 +366,18 @@ function nextQuestion() {
           }
 }
 
-// makes restart button appear
+// what happens when the end of the trivia is over
 function showEndScreen() {
     
+    // showing
     document.querySelector("#restart-button").style.display = "block";
+    document.querySelector("#end-score-counter").style.display = "block";
+
+    // not showing
     document.querySelector("#question").style.display = "none";
     document.querySelector("#select-prompt").style.display = "none";
+    document.querySelector("#score-counter").style.display = "none";
+
 
     // collectts all answer buttons
     let allAnswerButtons = document.querySelectorAll(".answer-box");
