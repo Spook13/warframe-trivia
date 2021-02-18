@@ -27,6 +27,10 @@ p{
     display: hidden;
 }
 
+.fa-trophy{
+    color: gold;
+}
+
 .answer-box{
     background-color: #98b0c5;
     border-radius: 3px;

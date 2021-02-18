@@ -93,7 +93,7 @@ let questionArray = [
 
     // question 3
     { 
-        question: "Which frame was made by Alad V as part of thee Zanuka Project?",
+        question: "Which frame was made by Alad V as part of the Zanuka Project?",
         answerA: { text: "Rhino", correct: false},
         answerB: { text: "Nyx", correct: false},
         answerC: { text: "Valkyr", correct: true},
@@ -138,7 +138,7 @@ let questionArray = [
 
     // question 8
     { 
-        question: "Which of these frames is considered a speed frames?",
+        question: "Which of these frames is considered a speed frame?",
         answerA: { text: "Rhino", correct: false},
         answerB: { text: "Nekros", correct: false},
         answerC: { text: "Saryn", correct: false},
